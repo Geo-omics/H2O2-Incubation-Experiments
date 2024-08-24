@@ -1,0 +1,101 @@
+Collection_Date	Experiment_Date	Rep	Site	Condition	Model_Fit	Sum_Error_Squares	PH2O2	Kloss	Net_production	Net_decay	Max_H2O2	Start_Time	Time_Max_H2O2	Stop_Time	Notes	FC_Net_production	FC_Net_decay	FC_Max_H2O2	FC_Time_Max_H2O2	FC_Notes
+30-May-17	31-May-17	1	WE2	WL	Yes	299193.59	314.3446661	0.314220824	80	201	940	8:00	14:00	17:00	[H2O2] at 14:00 and 17:00 not significantly different	106.6666667	0	1330	17:00	Ignored outlier sample at T=6 for these calculations
+30-May-17	31-May-17	2	WE2	WL	Yes	97350.8	113.3968709	0.077615034	91.66666667	11	890	8:00	14:00	17:00	Inital spike was lower and no measured decay in spike bottle. [H2O2] at 14:00 and 17:00 not significantly different	83.33333333	0	1040	17:00	
+12-Jun-17	13-Jun-17	1	WE2	WL	Yes	360172.55	428.48703	0.341155134	161.6666667	228.8888889	1550	8:20	14:00	17:00		206.6666667	0	2600	17:00	Spiked bottles have much higher [H2O2] than expected
+12-Jun-17	13-Jun-17	2	WE2	WL	Yes	156842.25	436.0203099	0.3438201	143.3333333	270	1340	8:20	14:00	17:00		170	0	2730	17:00	Spiked bottles have much higher [H2O2] than expected
+26-Jun-17	27-Jun-17	1	WE2	WL	Yes	1774.58	19.92981458	0.084759294	11	46.66666667	186	8:20	14:00	17:00		11.11111111	0	250	17:00	
+26-Jun-17	27-Jun-17	2	WE2	WL	Yes	2524.2	28.79669993	0.103659395	10	55.55555556	240	8:20	14:00	17:00	[H2O2] at 14:00 and 17:00 not significantly different	12.22222222	0	250	17:00	
+5-Jul-17	6-Jul-17	1	WE2	WL	Yes	75294.79	110.6361754	0.178724697	65	73.33333333	610	8:00	14:00	17:00		94.44444444	0	1010	17:00	
+5-Jul-17	6-Jul-17	2	WE2	WL	Yes	17354.75	212.0242947	0.384907943	66.66666667	128.8888889	600	8:00	14:00	17:00		87.77777778	0	1000	17:00	
+11-Jul-17	12-Jul-17	1	WE2	WL	Yes	78393.5	87.84636423	0.197140076	-7.777777778	173.3333333	500	8:00	8:00	17:00		21.11111111	0	530	17:00	
+11-Jul-17	12-Jul-17	2	WE2	WL	Yes	79862.86	34.45762348	0.120645495	-20	162.2222222	650	8:00	8:00	17:00		27.77777778	94.44444444	560	17:00	
+17-Jul-17	18-Jul-17	1	WE2	WL	Yes	53309.84	372.4375757	0.401899703	87.77777778	53.33333333	1060	8:00	17:00	17:00		117.7777778	0	1270	17:00	
+17-Jul-17	18-Jul-17	2	WE2	WL	Yes	20617.85	313.9483711	0.344603657	85.55555556	86.66666667	910	8:00	17:00	17:00		124.4444444	0	1340	17:00	
+24-Jul-17	25-Jul-17	1	WE2	WL	Yes	18032.86	258.5121129	0.414560234	15	204.4444444	600	8:00	14:00	17:00	"No significant difference between 11:00, 14:00, and 17:00 [H2O2]"	153.3333333	0	1600	17:00	
+24-Jul-17	25-Jul-17	2	WE2	WL	Yes	53819.79	258.1004848	0.404313616	13.33333333	157.7777778	730	8:00	14:00	17:00		87.77777778	0	980	14:00	No significant difference between 14:00 and 17:00 [H2O2]
+31-Jul-17	1-Aug-17	1	WE2	WL	Yes	14912.53	143.2891548	0.275813765	56.66666667	135.5555556	540	7:58	14:00	17:00		NA	0	NA	NA	It looks like the control bottle was spiked
+31-Jul-17	1-Aug-17	2	WE2	WL	Yes	6183.06	125.036491	0.254824268	35	114.4444444	430	7:58	14:00	17:00	No significant difference between 14:00 and 17:00 [H2O2]	46.66666667	0	940	17:00	
+14-Aug-17	15-Aug-17	1	WE2	WL	Yes	42008.79	30.33463723	0.135510468	-10	112.2222222	470	7:50	7:50	17:00		24.44444444	0	940	17:00	
+14-Aug-17	15-Aug-17	2	WE2	WL	Yes	10478.11	73.5790951	0.171076051	22.33333333	90	421	7:50	17:00	17:00		23.77777778	51.11111111	590	17:00	Ignored outlier sample at T=3 for these calculations
+21-Aug-17	22-Aug-17	1	WE2	WL	No	829377.27	NA	NA	128.8888889	430	1660	7:45	17:00	17:00	Morning was overcast and raining. H2O2 initially declined then increased in the afternoon. Net decay calculated with T=0 and T=3	42.22222222	37.77777778	610	17:00	
+21-Aug-17	22-Aug-17	2	WE2	WL	No	997084.69	NA	NA	86.66666667	363.3333333	1420	7:45	17:00	17:00	Morning was overcast and raining. H2O2 initially declined then increased in the afternoon. Net decay calculated with T=0 and T=3	28.88888889	0	530	17:00	
+30-Aug-17	30-Aug-17	1	EC 973	WL	No	375533.51	NA	NA	-2.222222222	136.6666667	780	7:47	7:47	17:00		45.55555556	0	520	17:00	
+30-Aug-17	30-Aug-17	2	EC 973	WL	No	17438.29	113.3340738	0.183860932	27	26.66666667	543	7:47	14:00	17:00		33.44444444	0	400	17:00	
+31-Aug-17	31-Aug-17	1	EC 885	WL	Yes	5885.21	55.84595459	0.318402198	0	93.33333333	200	8:40	8:40	18:00	No significant difference between all [H2O2]	16.66666667	0	240	18:00	
+31-Aug-17	31-Aug-17	2	EC 885	WL	Yes	2415.38	59.66809058	0.283979372	0	82.22222222	220	8:40	8:40	18:00	No significant difference between all [H2O2]	14.44444444	15.55555556	220	18:00	
+5-Sep-17	6-Sep-17	1	WE2	WL	Yes	8932.13	168.3854017	0.494787187	22.55555556	136.6666667	383	7:46	17:00	17:00		47.77777778	0	600	17:00	
+5-Sep-17	6-Sep-17	2	WE2	WL	Yes	43336.22	87.79110195	0.275088891	-35.55555556	81.11111111	680	7:46	7:46	17:00		23.33333333	0	300	17:00	
+11-Sep-17	12-Sep-17	1	WE2	WL	Yes	27637.99	71.06167103	0.272233352	0	124.4444444	300	7:40	7:40	17:00	No significant difference for all time points	20	48.88888889	270	17:00	
+11-Sep-17	12-Sep-17	2	WE2	WL	Yes	27213.12	69.66463399	0.273402106	6.666666667	97.77777778	320	7:40	17:00	17:00	No significant difference between 14:00 and 17:00 [H2O2]	10	0	180	17:00	No significant difference between 14:00 and 17:00 [H2O2]
+18-Sep-17	19-Sep-17	1	WE2	WL	Yes	20372.59	158.7118558	0.511505932	-22.22222222	125.5555556	550	8:00	8:00	17:00	Overcast morning with rain	14.44444444	63.33333333	380	17:00	Overcast morning with rain
+18-Sep-17	19-Sep-17	2	WE2	WL	Yes	3755.82	188.2514224	0.533744889	18.33333333	135.5555556	360	8:00	14:00	17:00	Overcast morning with rain. No significant difference between 14:00 and 17:00 [H2O2]	12.22222222	44.44444444	280	17:00	Overcast morning with rain
+25-Sep-17	26-Sep-17	1	WE2	WL	Yes	21266.02	145.6179234	0.488412497	-13.33333333	158.8888889	440	8:00	8:00	17:00		32.22222222	58.88888889	1000	14:00	No significant difference between 14:00 and 17:00 [H2O2]
+25-Sep-17	26-Sep-17	2	WE2	WL	Yes	12921.99	195.6802814	0.576264307	-2.222222222	177.7777778	400	8:00	8:00	17:00		25.55555556	0	540	17:00	
+3-Oct-17	4-Oct-17	1	EC 973	WL	Yes	21839.35	257.7596649	0.59539075	23.33333333	82.22222222	460	8:05	14:00	17:00		12.22222222	0	310	17:00	
+3-Oct-17	4-Oct-17	2	EC 973	WL	Yes	4610.08	133.176829	0.298998147	6.666666667	35.55555556	420	8:05	14:00	17:00	No significant difference between 14:00 and 17:00 [H2O2]	12.11111111	0	280	17:00	No significant difference between 14:00 and 17:00 [H2O2]
+5-Oct-17	5-Oct-17	1	EC 1461	WL	Yes	16832.28	114.6456013	0.210016084	18.88888889	67.77777778	610	8:20	17:00	17:00		18.88888889	45.55555556	360	17:00	
+5-Oct-17	5-Oct-17	2	EC 1461	WL	Yes	11462.6	119.8916837	0.22224697	23.33333333	73.33333333	540	8:20	17:00	17:00	No significant difference between 14:00 and 17:00 [H2O2]	10	0	290	17:00	No significant difference between 14:00 and 17:00 [H2O2]
+9-Jul-18	10-Jul-18	1	WE2	WL	Yes	1705.84	70.02374446	0.346468844	28.33333333	73.33333333	210	8:00	14:00	17:00	No significant difference between 14:00 and 17:00 [H2O2]	24.44444444	NA	380	17:00	No significant difference between 14:00 and 17:00 [H2O2]
+9-Jul-18	10-Jul-18	2	WE2	WL	Yes	7312.16	66.07575418	0.34746372	21.66666667	67.77777778	220	8:00	14:00	17:00	No significant difference between 14:00 and 17:00 [H2O2]	36.66666667	NA	480	17:00	
+9-Jul-18	10-Jul-18	1	WE2	WD	Yes	1640.9	12.59389612	0.379776091	0	105.5555556	50	8:00	8:00	17:00	No significant difference for all time points	0	NA	410	8:00	No significant difference across all time points
+9-Jul-18	10-Jul-18	2	WE2	WD	Yes	408.28	10.56900758	0.343808586	-3	93.88888889	60	8:00	8:00	17:00	No significant difference for all time points	0	NA	244	8:00	No significant difference across all time points
+23-Jul-18	24-Jul-18	1	WE2	WL	Yes	26.36	20.36004839	0.239807439	6.666666667	73.33333333	80	8:00	17:00	17:00	No significant difference between 14:00 and 17:00 [H2O2]	6.444444444	NA	95	17:00	
+23-Jul-18	24-Jul-18	2	WE2	WL	Yes	2321.25	14.76974067	0.187400895	5.222222222	66.66666667	80	8:00	17:00	17:00	No significant difference between 14:00 and 17:00 [H2O2]	7.111111111	NA	100	17:00	
+23-Jul-18	24-Jul-18	1	WE2	WD	Yes	2915	2.430699443	0.179155605	0	67.77777778	30	8:00	8:00	17:00	No significant difference for all time points	0	NA	51	8:00	No significant difference across all time points
+23-Jul-18	24-Jul-18	2	WE2	WD	Yes	1083.5	5.669225013	0.213476045	0	74.22222222	40	8:00	8:00	17:00	No significant difference for all time points	0	NA	40	8:00	No significant difference across all time points
+30-Jul-18	31-Jul-18	1	WE2	WL	Yes	681.02	14.67135652	0.287098373	4	70	60	7:50	17:05	17:05	No significant difference between 14:00 and 17:00 [H2O2]	4.111111111	NA	60	17:05	No significant difference between 14:00 and 17:00 [H2O2]
+30-Jul-18	31-Jul-18	2	WE2	WL	Yes	196.83	13.70042185	0.281629992	3.333333333	64.55555556	50	7:50	17:05	17:05	No significant difference between 14:00 and 17:00 [H2O2]	6.333333333	NA	80	17:05	
+30-Jul-18	31-Jul-18	1	WE2	WD	Yes	1056.7	2.685299008	0.23624539	0	54.55555556	24	7:50	7:50	17:05	No significant difference for all time points	0	NA	27	8:00	No significant difference across all time points
+30-Jul-18	31-Jul-18	2	WE2	WD	Yes	299.93	4.031298929	0.263696308	0	62.11111111	30	7:50	7:50	17:05	No significant difference for all time points	0	NA	25	8:00	No significant difference across all time points
+2-Aug-18	3-Aug-18	1	TWI	WL	Yes	1465.27	35.78356854	0.394275759	14.33333333	65.55555556	102	7:55	14:00	17:00	No significant difference between 14:00 and 17:00 [H2O2]	17.55555556	NA	178	17:00	
+2-Aug-18	3-Aug-18	2	TWI	WL	Yes	2266.79	27.31757031	0.322011982	14.83333333	54.33333333	105	7:55	14:00	17:00		17.77777778	NA	170	17:00	
+2-Aug-18	3-Aug-18	1	TWI	FL	Yes	1931.28	24.51561904	0.308859153	4.444444444	50	97	7:55	17:00	17:00	"No significant difference between 11:00, 14:00 and 17:00 [H2O2]"	17.55555556	NA	178	17:00	
+2-Aug-18	3-Aug-18	2	TWI	FL	Yes	2632.73	23.09851941	0.317372161	5.111111111	52.22222222	91	7:55	17:00	17:00	"No significant difference between 11:00, 14:00 and 17:00 [H2O2]"	17.77777778	NA	170	17:00	
+6-Aug-18	7-Aug-18	1	WE2	WL	Yes	1278.16	38.53829629	0.425792418	6	104.6666667	104	7:55	16:57	16:57	No significant difference between 14:00 and 17:00 [H2O2]	9.555555556	NA	131	17:00	
+6-Aug-18	7-Aug-18	2	WE2	WL	Yes	2680.03	38.5220485	0.433481785	4.444444444	102	90	7:55	16:57	16:57	No significant difference between 14:00 and 17:00 [H2O2]	10	NA	140	17:00	No significant difference between 14:00 and 17:00 [H2O2]
+6-Aug-18	7-Aug-18	1	WE2	WD	Yes	165.23	15.21811941	0.372354113	0	84	36	7:55	7:55	16:57	No significant difference for all time points	0	NA	58	7:55	No significant difference across all time points
+6-Aug-18	7-Aug-18	2	WE2	WD	Yes	1398.76	8.74087554	0.307906371	0	71.44444444	40	7:55	7:55	16:57	No significant difference for all time points	0	NA	74	7:55	No significant difference across all time points
+9-Aug-18	10-Aug-18	1	TWI	WL	Yes	234.78	20.51454889	0.2823203	6.111111111	71.11111111	76	7:55	17:02	17:02	No significant difference between 14:00 and 17:00 [H2O2]	6.555555556	NA	79	17:02	
+9-Aug-18	10-Aug-18	2	TWI	WL	Yes	758.96	15.90513723	0.247667424	3.666666667	61.11111111	70	7:55	17:02	17:02	No significant difference between 14:00 and 17:00 [H2O2]	8.777777778	NA	99	17:02	
+9-Aug-18	10-Aug-18	1	TWI	FL	Yes	1907.42	13.65303709	0.218549453	3.666666667	56.66666667	72	7:55	17:02	17:02	"No significant difference between 11:00, 14:00 and 17:00 [H2O2]"	6.555555556	NA	79	17:02	
+9-Aug-18	10-Aug-18	2	TWI	FL	Yes	431.6	14.53264282	0.256627447	3.333333333	60	50	7:55	17:02	17:02	"No significant difference between 11:00, 14:00 and 17:00 [H2O2]"	8.777777778	NA	99	17:02	
+13-Aug-18	14-Aug-18	1	WE2	WL	Yes	1004.6	43.95027378	0.36413651	9.222222222	80.33333333	133	7:50	16:55	16:55		10	NA	150	16:55	
+13-Aug-18	14-Aug-18	2	WE2	WL	Yes	291.97	52.208323	0.439868957	7	88.66666667	120	7:50	16:55	16:55	No significant difference between 14:00 and 17:00 [H2O2]	12.33333333	NA	161	16:55	
+13-Aug-18	14-Aug-18	1	WE2	WD	Yes	1689.98	14.17849383	0.315129921	1.444444444	69.77777778	61	7:50	16:55	16:55	"No significant difference between 11:00, 14:00 and 17:00 [H2O2]"	0	NA	62	7:50	No significant difference across all time points
+13-Aug-18	14-Aug-18	2	WE2	WD	Yes	2123.16	13.12473512	0.304474404	0	65.55555556	60	7:50	7:50	16:55	No significant difference for all time points	0	NA	63	7:50	No significant difference across all time points
+20-Aug-18	21-Aug-18	1	WE12	WL	Yes	626.31	18.33824184	0.295824627	6.666666667	65.55555556	70	7:55	13:54	16:51	"No significant difference between 11:00, 14:00 and 17:00 [H2O2]"	3.777777778	NA	60	16:51	"No significant difference between 11:00, 14:00 and 17:00 [H2O2]"
+20-Aug-18	21-Aug-18	2	WE12	WL	Yes	671.89	20.65382407	0.325751776	8.166666667	86	79	7:55	13:54	16:51		3.888888889	NA	70	16:51	"No significant difference between 11:00, 14:00 and 17:00 [H2O2]"
+20-Aug-18	21-Aug-18	1	WE12	FL	Yes	262.3	17.36110351	0.291215892	2.888888889	80.22222222	69	7:55	16:51	16:51	No significant difference between 14:00 and 17:00 [H2O2]	0	NA	31	16:51	
+20-Aug-18	21-Aug-18	2	WE12	FL	Yes	165	17.53248327	0.298472005	1.888888889	77.77777778	60	7:55	16:51	16:51	"No significant difference between 11:00, 14:00 and 17:00 [H2O2]"	0	NA	25	16:51	
+13-Sep-18	14-Sep-18	1	TWI	WL	Yes	16656.98	46.26963628	0.197156258	22.55555556	191	233	7:55	14:00	16:52		13.44444444	NA	175	16:51	
+13-Sep-18	14-Sep-18	2	TWI	WL	Yes	NA	NA	NA	21.77777778	NA	226	7:55	14:00	16:52	Spike not added	13.66666667	NA	153	16:51	
+13-Sep-18	14-Sep-18	1	TWI	FL	Yes	7774.53	50.74035448	0.22780747	31.66666667	64.44444444	240	7:55	13:57	16:52	No significant difference between 14:00 and 17:00 [H2O2]	13.44444444	NA	175	16:51	
+13-Sep-18	14-Sep-18	2	TWI	FL	Yes	30915.96	27.22227258	0.122484904	21.16666667	50	172	7:55	16:52	16:52	No significant difference between 14:00 and 17:00 [H2O2]	13.66666667	NA	153	16:51	
+17-Sep-18	18-Sep-18	1	WE2	WL	Yes	2744.23	23.65394808	0.244840199	7.222222222	73.77777778	115	7:56	16:54	16:54		6	NA	103	16:51	
+17-Sep-18	18-Sep-18	2	WE2	WL	Yes	5568.06	32.62776371	0.241996439	9.111111111	66.22222222	139	7:56	16:54	16:54	No significant difference between 14:00 and 17:00 [H2O2]	11.77777778	NA	160	16:51	
+17-Sep-18	18-Sep-18	1	WE2	WD	Yes	887.7	8.496136744	0.249337818	0	78.55555556	60	7:56	7:56	16:54	No significant difference for all time points	0	NA	54	7:56	No significant difference across all time points
+17-Sep-18	18-Sep-18	2	WE2	WD	Yes	1315.41	5.897208061	0.222845748	0	72.22222222	60	7:56	7:56	16:54	No significant difference for all time points	0	NA	49	7:56	No significant difference across all time points
+22-Jul-19	23-Jul-19	1	Bloom Chase	WL	No	779320.84	NA	NA	201.6666667	231.6666667	1260	7:51	13:56	16:56	Net decay measured over three hours. Likely an underestimate because the spike bottle was approximately equal to control bottle at T=3.	50.83333333	NA	350	13:56	Experiment measured over 6 hours instead of 9
+22-Jul-19	23-Jul-19	2	Bloom Chase	WL	No	228365.33	NA	NA	128.3333333	164.6666667	840	7:51	13:56	16:56	Net decay measured over three hours. Likely an underestimate because the spike bottle was approximately equal to control bottle at T=3	47.5	NA	337	13:56	Experiment measured over 6 hours instead of 9
+22-Jul-19	23-Jul-19	1	Bloom Chase	WD	Yes	173.38	11.0326602	0.790451189	-5.5	116.3333333	45	7:51	7:51	16:56	Experiment measured over 6 hours instead of 9	0	NA	32	7:51	Experiment measured over 6 hours instead of 9
+22-Jul-19	23-Jul-19	2	Bloom Chase	WD	Yes	206.23	8.188642771	0.642885682	-3.666666667	89.66666667	40	7:51	7:51	16:56	Experiment measured over 6 hours instead of 9	0	NA	37	7:51	Experiment measured over 6 hours instead of 9
+1-Aug-19	2-Aug-19	1	Bloom Chase	WL	Yes	13151.39	133.3593647	0.580003239	29.33333333	89	248	7:52	13:55	16:43		50	NA	572	16:43	Subtracted average dark production
+1-Aug-19	2-Aug-19	2	Bloom Chase	WL	Yes	9656.31	171.4381221	0.796703566	22.83333333	92.11111111	220	7:52	13:55	16:43	No significant difference between 13:55 and 16:43 [H2O2]	55	NA	620	16:43	Subtracted average dark production
+1-Aug-19	2-Aug-19	1	Bloom Chase	WD	Yes	524.49	33.61541039	0.529722954	0	87.33333333	80	7:52	13:55	16:43	No significant difference for all time points	3	NA	124	16:43	"No significant difference between 11:00, 14:00 and 17:00 [H2O2]"
+1-Aug-19	2-Aug-19	2	Bloom Chase	WD	Yes	91.71	28.26679286	0.4458227	0	59.88888889	76	7:52	7:52	16:43	No significant difference for all time points	2.555555556	NA	120	13:55	"No significant difference between 11:00, 14:00 and 17:00 [H2O2]"
+5-Aug-19	6-Aug-19	1	Bloom Chase	WL	No	22582.2	NA	NA	74.33333333	77.33333333	390	8:04	10:53	16:50	Net decay measured over three hours. Likely an underestimate because the spike bottle was approximately equal to control bottle at T=3.	148	NA	2040	16:50	Subtracted average dark production
+5-Aug-19	6-Aug-19	2	Bloom Chase	WL	No	46950.85	NA	NA	103.6666667	76.66666667	459	8:04	10:53	16:50	Net decay measured over three hours. Likely an underestimate because the spike bottle was approximately equal to control bottle at T=3.	119	NA	1490	16:50	Subtracted average dark production
+5-Aug-19	6-Aug-19	1	Bloom Chase	FL	No	39762.17	NA	NA	85.33333333	123.3333333	369	8:04	10:53	16:50	Net decay measured over three hours. Likely an underestimate because the spike bottle was approximately equal to control bottle at T=3.	148	NA	2040	16:50	Subtracted average dark production
+5-Aug-19	6-Aug-19	2	Bloom Chase	FL	No	24706.12	NA	NA	97.33333333	151.3333333	378	8:04	10:53	16:50	Net decay measured over three hours. Likely an underestimate because the spike bottle was approximately equal to control bottle at T=3.	119	NA	1490	16:50	Subtracted average dark production
+23-Aug-19	24-Aug-19	1	Bloom Chase	WL	No	11853.13	NA	NA	35	162.6666667	365	7:58	16:57	16:57	Net decay measured over three hours. Likely an underestimate because the spike bottle was approximately equal to control bottle at T=3.	NA	NA	NA	NA	"Really high felume signal, standard additions were masked"
+23-Aug-19	24-Aug-19	2	Bloom Chase	WL	No	20163.48	NA	NA	41.33333333	131.6666667	420	7:58	16:57	16:57	Net decay measured over three hours. Likely an underestimate because the spike bottle was approximately equal to control bottle at T=3.	75.55555556	NA	770	16:57	
+23-Aug-19	24-Aug-19	1	Bloom Chase	FL	No	22745.38	NA	NA	40.16666667	133.3333333	318	7:58	14:01	16:57	No significant difference between 14:01 and 16:57 [H2O2]. Net decay measured over three hours. Likely an underestimate because the spike bottle was approximately equal to control bottle at T=3.	75.55555556	NA	770	16:57	
+23-Aug-19	24-Aug-19	2	Bloom Chase	FL	No	20302.03	NA	NA	45	76	350	7:58	14:01	16:57	Net decay measured over three hours. Likely an underestimate because the spike bottle was approximately equal to control bottle at T=3.	75.55555556	NA	770	16:57	
+16-Sep-19	17-Sep-19	1	Bloom Chase	WL	Yes	5604.18	34.42211003	0.180750403	16.55555556	65.11111111	179	8:01	17:02	17:02		13.33333333	NA	160	17:02	
+16-Sep-19	17-Sep-19	2	Bloom Chase	WL	Yes	8929.47	31.36050263	0.14029438	17	42.22222222	187	8:01	17:02	17:02		17	NA	177	17:02	
+16-Sep-19	17-Sep-19	1	Bloom Chase	WD	Yes	4094.8	4.584024524	0.141794161	0	67.66666667	35	8:01	8:01	17:02	No significant difference for all time points	0	NA	40	8:01	No significant difference across all time points
+16-Sep-19	17-Sep-19	2	Bloom Chase	WD	Yes	2145.42	6.044659919	0.133755224	0	58.11111111	50	8:01	13:59	17:02	No significant difference for all time points	0	NA	48	8:01	No significant difference across all time points
+19-Sep-19	20-Sep-19	1	Bloom Chase	WL	Yes	27564.68	58.32188255	0.198788175	24.44444444	73.33333333	260	7:57	16:59	16:59	No significant difference between 14:02 and 16:59 [H2O2]	26.66666667	NA	290	16:59	
+19-Sep-19	20-Sep-19	2	Bloom Chase	WL	Yes	3949.34	61.4258555	0.202235823	25.55555556	67.77777778	260	7:57	16:59	16:59	No significant difference between 14:02 and 16:59 [H2O2]	26.66666667	NA	300	16:59	
+19-Sep-19	20-Sep-19	1	Bloom Chase	FL	Yes	14905.63	77.2681458	0.246064775	25.55555556	91.11111111	280	7:57	16:59	16:59	No significant difference between 14:02 and 16:59 [H2O2]	26.66666667	NA	290	16:59	
+19-Sep-19	20-Sep-19	2	Bloom Chase	FL	Yes	7821.71	53.84149702	0.182613194	22.22222222	71.11111111	250	7:57	16:59	16:59	No significant difference between 14:02 and 16:59 [H2O2]	26.66666667	NA	300	16:59	

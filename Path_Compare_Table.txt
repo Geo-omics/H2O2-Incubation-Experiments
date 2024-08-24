@@ -1,0 +1,7 @@
+Date	P value	CI overlap?	P value	CI overlap?	P value	CI overlap?	P value	CI overlap?	P value	CI overlap?
+Jul 23 2019	0.20	No	0.21	No	0.22	No	0.25	Yes	0.27	Yes
+Aug 2 2019	0.03	Yes	0.02	No	0.01	No	5.8E-04	No	3.0E-04	No
+Aug 6 2019	0.18	No	0.18	No	0.19	No	0.21	No	0.22	Yes
+Aug 24 2019	0.35	Yes	0.71	Yes	1.0	Yes	0.15	Yes	0.09	Yes
+Sep 17 2019	9.3E-07	No	4.9E-06	No	2.9E-05	No	0.07	Yes	0.21	Yes
+Sep 20 2019	1.7E-08	No	3.8E-08	No	5.1E-07	No	1.3E-05	No	5.1E-04	No

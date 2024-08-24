@@ -1,0 +1,13 @@
+Date	Type	H2O2_production_rate	CI
+23-Jul-19	Photochemical	53	12
+2-Aug-19	Photochemical	40	9
+6-Aug-19	Photochemical	36	8
+24-Aug-19	Photochemical	33	7
+17-Sep-19	Photochemical	9	2
+20-Sep-19	Photochemical	10	2
+23-Jul-19	Measured net	165	72
+2-Aug-19	Measured net	26	6
+6-Aug-19	Measured net	90	29
+24-Aug-19	Measured net	38	6
+17-Sep-19	Measured net	17	0.4
+20-Sep-19	Measured net	25	1
