@@ -1,0 +1,231 @@
+---
+title: "SeaBird PAR Kd calculations"
+output: html_notebook
+---
+
+This R notebook is for calculating attentuation coefficients (Kd) in western Lake Erie for PAR wavelengths using SeaBird PAR profiles collected by Dack Stuart at CIGLR.  
+
+Kd (units are inverse meters) is related to the decrease in irradiance in the water column with depth via the following equation: 
+$$I_{\lambda,z} = I_{\lambda,0} * e^{-(Kd*z)} $$   
+
+where $I_{\lambda,z}$ is the irradiance at a depth (z) for a given wavelength $(\lambda)$. $I_{\lambda,0}$ is the surface irradiance for a given.  
+
+After rearranging the equation as follows, we can see that the slope of the natural log of irradiance at depth is equal to Kd:  
+
+1. $\frac{I_{\lambda,z}}{I_{\lambda,0}} = e^{-(Kd*z)}$ (divide both sides by $I_{\lambda,0}$)  
+
+2. $\ln(\frac{I_{\lambda,z}}{I_{\lambda,0}}) = -Kd*z$ (log transform both sides)   
+
+3. $\ln({I_{\lambda,z}}) - \ln({I_{\lambda,0}}) = -Kd*z$ (rewrite the logarithmic expression)  
+
+4. $\ln({I_{\lambda,z}}) = \ln({I_{\lambda,0}}) - Kd*z$  (add $\ln({I_{\lambda,0}})$ to both sides)  
+
+
+The above equation has the form for the general equation of a line: $y = b - mx$  
+So the slope of ln(irradiance) vs. depth at each date will give us Kd of each wavelength. 
+
+Load the needed R packages:
+```{r}
+library(dplyr)
+library(broom)
+library(ggplot2)
+library(patchwork)
+```
+
+First, import a data frame of spectral irradiance with depth in the PAR wavelengths:  
+```{r}
+SeaBird_df <- read.table("SeaBird_PAR_Transmission.txt", header=TRUE, sep="\t")
+```
+
+Log transform the irradiance data at each wavelength:
+```{r}
+#loop through 3 - number of columns in the dataframe
+#Starting at 3 because column 1 is the date and column 2 is depth.
+for (i in 3:dim(SeaBird_df)[2]){
+  SeaBird_df[,i] <- log(SeaBird_df[,i])
+}
+```
+Remove rows where NANs were produced:
+```{r}
+SeaBird_no_nans <- na.omit(SeaBird_df)
+```
+
+Find the slope of log transformed irradiance and depth for each wavelength (columns) on each date:  
+```{r}
+#Get a vector of dates to loop through:
+dates <- unique(SeaBird_no_nans$Datetag)
+
+#create an empty array to save the linear regressions in:  
+#number of rows will be the product of length of dates and wavelength columns:  
+kd_lm_results <- data.frame(matrix(ncol=3, nrow=length(3:length(SeaBird_no_nans)) * length(dates)))
+
+#Loop through all the wavelengths in each date, regressing log transformed irradiance against depth:  
+count <- 0 #Set up a counter, to keep track of the number of times we went through the loop and index the results later
+for (date in dates){
+  temp_df <- filter(SeaBird_no_nans, Datetag == date) #get only values from one date.
+  #loop through each column of the dataframe that contains irradiance data. Start at column 3 because dates are in column 1 and depth is in column 2
+  for (i in 3:length(SeaBird_no_nans)){ 
+    count <- count + 1 
+    kd_lm_results[count,1] <- date #store date
+    kd_lm_results[count,2] <- colnames(SeaBird_no_nans)[i] #store wavelength
+    kd_lm <- summary(lm(temp_df[ , i] ~ temp_df$Depth)) #regress ln(irradiance) vs depth
+    kd_lm_results[count,3] <- kd_lm$coefficients[2,1] #store the slope value (Kd)
+  }
+}
+
+#Rename column names in results table to something more useful:
+colnames(kd_lm_results) <- c("Date", "Wavelength", "Kd")
+```
+
+Calculate average Kd values for each wavelength:  
+```{r}
+#First convert Kd data into positive numbers:
+kd_lm_results$Kd <- abs(kd_lm_results$Kd)
+
+Average_Kd <- kd_lm_results %>%
+  group_by(Wavelength) %>%
+  summarise(n=n(), Kd_avg=mean(Kd), Kd_SD=sd(Kd)) %>%
+  mutate(Kd_95_CI=Kd_SD/sqrt(n)*1.96)
+
+#Clean up wavelength entry for plotting:
+Average_Kd$Wavelength <- gsub("X", "", Average_Kd$Wavelength)
+``` 
+
+Plot average Kd at each wavelength:
+```{r}
+ggplot(Average_Kd, aes(x=as.numeric(Wavelength), y=Kd_avg)) +
+  geom_point() +
+  geom_errorbar(aes(ymin=Kd_avg-Kd_95_CI, ymax=Kd_avg+Kd_95_CI)) +
+  ggtitle("PAR attenuation") +
+  theme_classic() +
+  theme(plot.background = element_rect(color = "NA"),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        axis.line.x = element_line(size=0.2),
+        axis.line.y = element_line(size=0.2),
+        axis.ticks.length = unit(-0.1, "cm"),
+        axis.text.x = element_text(angle = 45, hjust = 1, margin = margin(t = 5, r = 0, b = 0,)),
+        axis.text.y = element_text(margin = margin(t = 0, r = 5, b = 0,)),
+        axis.title.y = element_text(margin = margin(t = 0, r = 5, b = 0,)),
+        axis.title.x = element_text(margin = margin(t = 5, r = 0, b = 0,))) +
+  coord_cartesian(ylim=c(0.6,2.2)) +
+  scale_x_continuous(breaks=seq(300,800, by=20)) +
+  scale_y_continuous(breaks=seq(0.6,2.2, by=0.2)) +
+  ylab(expression("Attenuation Coefficient (m"^-1*")")) +
+  xlab("Wavelength (nm)")
+```
+Let's add in the UV attenuation data determined with the C-OPS:  
+```{r}
+#Import COPS dataframe:  
+COPS_df <- read.table("COPS_df.txt", header=TRUE, sep="\t")
+
+#Combine with the Seabird dataframe, keeping only values above 380 nm:
+Average_Kd <- filter(Average_Kd, Wavelength > 390)
+Combined_Seabird_COPS_df <- rbind(COPS_df, Average_Kd)
+Combined_Seabird_COPS_df$Wavelength <- as.numeric(Combined_Seabird_COPS_df$Wavelength)
+#Round the wavelength to the nearest whole number:
+Combined_Seabird_COPS_df$Wavelength <- round(Combined_Seabird_COPS_df$Wavelength, digits = 0)
+
+Kd_wave_plot <- ggplot(Combined_Seabird_COPS_df, aes(x=Wavelength, y=Kd_avg)) +
+  geom_point(size=0.5) +
+  geom_errorbar(aes(ymin=Kd_avg-Kd_95_CI, ymax=Kd_avg+Kd_95_CI), size=0.1) +
+  theme_classic() +
+  theme(plot.background = element_rect(color = "NA"),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        axis.line.x = element_line(size=0.2),
+        axis.line.y = element_line(size=0.2),
+        axis.ticks.length = unit(-0.05, "cm"),
+        axis.text.x = element_text(size = 12 / .pt, color = "black", angle = 45, hjust = 1,
+                                   margin = margin(t = 5, r = 0, b = 0,)),
+        axis.text.y = element_text(size = 12 / .pt, color = "black", margin = margin(t = 0, r = 5, b = 0,)),
+        axis.title.y = element_text(size = 14 / .pt, margin = margin(t = 0, r = 5, b = 0,)),
+        axis.title.x = element_text(size = 14 / .pt, margin = margin(t = 5, r = 0, b = 0,))) +
+  coord_cartesian(ylim=c(0.6,10)) +
+  scale_x_continuous(breaks=seq(300,800, by=20)) +
+  scale_y_continuous(breaks=seq(2,10, by=2)) +
+  ylab(expression("Attenuation Coefficient (m"^-1*")")) +
+  xlab("Wavelength (nm)")
+
+Kd_wave_plot
+```
+
+From this curve, we will calculate the depth at which the fraction of light transmitted equals that transmitted through the bottles at each wavelength.   
+
+First, let's plot the bottle + ND screen transmission:  
+```{r}
+#Import the dataframe:
+Bottle_transmission_df <- read.table("Bottle_transmission.txt", header=TRUE, sep="\t")
+
+Bottle_Transmission_plot <- ggplot(Bottle_transmission_df, aes(x=Wavelength, y=Film_Bottle_transmission)) +
+  geom_line() +
+  theme_classic() +
+  theme(plot.background = element_rect(color = "NA"),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        axis.line.x = element_line(size=0.2),
+        axis.line.y = element_line(size=0.2),
+        axis.ticks.length = unit(-0.1, "cm"),
+        axis.text.x = element_text(size = 12 / .pt, color = "black", angle = 45, hjust = 1,
+                                   margin = margin(t = 5, r = 0, b = 0,)),
+        axis.text.y = element_text(size = 12 / .pt, color = "black", margin = margin(t = 0, r = 5, b = 0,)),
+        axis.title.y = element_text(size = 14 / .pt, margin = margin(t = 0, r = 5, b = 0,)),
+        axis.title.x = element_text(size = 14 / .pt, margin = margin(t = 5, r = 0, b = 0,))) +
+  scale_x_continuous(breaks=seq(200,600, by=100)) +
+  ylab("Percent Transmission") +
+  xlab("Wavelength (nm)")
+
+Bottle_Transmission_plot
+```
+
+Merge the two dataframes, keeping only attenuation measurements that have a matching wavelength value in both the water column profiles and bottle transmission data:  
+```{r}
+Merged_df <- merge(Bottle_transmission_df, Combined_Seabird_COPS_df, by="Wavelength", all = FALSE)
+```
+
+Using the Kd values, calculate the depth at which $\frac{I_{\lambda,z}}{I_{\lambda,0}}$ is equal to bottle transmission during the experiments:  
+```{r}
+#Convert from percent back to a fraction:  
+Merged_df$Film_Bottle_transmission <- Merged_df$Film_Bottle_transmission / 100
+#Find the depth in the lake that correpsonds to the light exposure in the experiments:  
+Merged_df$Cor_Lake_Depth <- log(Merged_df$Film_Bottle_transmission) / (Merged_df$Kd_avg * -1)
+```
+
+Plot the corresponding lake depth for each wavelength:  
+```{r}
+Cor_Lake_Depth_plot <- ggplot(Merged_df, aes(x=Wavelength, y=Cor_Lake_Depth)) +
+  geom_line() +
+  theme_classic() +
+  theme(plot.background = element_rect(color = "NA"),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        axis.line.x = element_line(size=0.2),
+        axis.line.y = element_line(size=0.2),
+        axis.ticks.length = unit(-0.05, "cm"),
+        axis.text.x = element_text(size = 12 / .pt, color = "black", angle = 45, hjust = 1,
+                                   margin = margin(t = 5, r = 0, b = 0,)),
+        axis.text.y = element_text(size = 12 / .pt, color = "black", margin = margin(t = 0, r = 5, b = 0,)),
+        axis.title.y = element_text(size = 14 / .pt, margin = margin(t = 0, r = 5, b = 0,)),
+        axis.title.x = element_text(size = 14 / .pt, margin = margin(t = 5, r = 0, b = 0,))) +
+  coord_cartesian(ylim=c(0,4)) +
+  scale_y_continuous(breaks=seq(0,4, by=0.5)) +
+  scale_x_continuous(breaks=seq(300,800, by=20)) +
+  ylab("Depth (m)") +
+  xlab("Wavelength (nm)")
+
+Cor_Lake_Depth_plot
+```
+Combine these three plots into one figure:  
+```{r}
+light_transmission_plot <- Kd_wave_plot + Bottle_Transmission_plot + Cor_Lake_Depth_plot + plot_layout(ncol=1)
+light_transmission_plot
+ggsave("light_transmission_plot.pdf", light_transmission_plot, width = 3.5, height = 7, units = "in", dpi=300)
+```
+
+
+
+
+
+
+
+
