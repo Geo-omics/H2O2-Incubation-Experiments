@@ -34,3 +34,13 @@ LE_H2O2.taxonomy = OTU taxonomy data
 Outdoor_Indoor_Exp_Compare.txt = dataframe used to compare production and decay rates obtained from experiments with unlabeled and labeled H2O2 spikes
 
 Isotope_Replicate_Data.txt = PH2O2 and Kloss data from every replication bottle in the indoor experiments with 18O2-labeled H2O2 spikes
+
+The above files will create all figures except Figure S2, which needs the following:
+
+SeaBird_PAR_Kd_calculations.RMD = the R scripts used to make the figure
+
+Bottle_transmission.txt = one of the input tables, it includes the light transmission data of polycarbonate bottles and neutral density screening used to for the outdoor experiments.
+
+COPS_df.txt = UV-light attenuation data from western Lake Erie
+
+SeaBird_PAR_Transmission.txt = Visible light attenuation data from western Lake Erie
